@@ -1,0 +1,232 @@
+@import "globals";
+
+$veryDarkMagenta: hsl(300, 43%, 22%);
+$softPink: hsl(333, 80%, 67%);
+$darkGrayishMagenta: hsl(303, 10%, 53%);
+$lightGrayishMagenta: hsl(300, 24%, 96%);
+$white: hsl(0, 0%, 100%);
+$realDarkGrayishMagenta:hsl(300°, 20, 25);
+
+
+.bg-image-top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+
+.bg-image-bottom{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateY(30%);
+}
+
+header{
+width: 90%;
+margin: 0 auto;
+padding-top: 50px;
+padding-bottom: 30px;
+
+    h1{ 
+        color: $veryDarkMagenta;
+        width: 60%;
+        margin: 0 auto;
+        height: 100px;
+        font-weight: 700;    
+        display:flex;
+        text-align: center;
+    }
+    
+    p{
+        color: $darkGrayishMagenta;
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 40px;
+        height: 85px;
+        display: flex;
+        text-align: center;
+    }
+}
+
+.ratings{
+    display:flex;
+    flex-direction:column;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+
+    .review{
+        border-radius: 10px;
+        width: 100%;
+        padding: 15px 75px;
+        margin: 10px auto;
+        background-color: $lightGrayishMagenta;
+        p {
+            color:$veryDarkMagenta;
+            font-weight: 700;
+        }
+    }
+}
+
+.user{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    .user-review{
+        background-color: $veryDarkMagenta;
+        width: 90%;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        margin-left: 20px;
+        padding: 15px;
+
+        .user-profile{
+
+            display: flex;
+            flex-direction: row;
+
+            img{
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                margin: 20px;
+                
+            }
+    
+            .id{
+                width: 100%;
+                height: 30px;
+                margin: 20px;
+
+                .name{
+                    color: $white;
+                    font-weight: 500;
+                }
+
+                .verified-buyer{
+                    color: $softPink;
+                    font-weight: 400;
+                }
+
+            }
+        }
+
+
+        .text{
+            width: 90%;
+            margin: 0 auto;
+            color: $white;
+        }
+    }
+}
+
+
+@media all and(min-width: 688px){
+    body{
+        display: grid;
+        grid-template-columns: 50% auto;
+        grid-template-rows: 50% auto;
+        grid-template-areas: "header ratings"
+        "user user";
+
+        .bg-image-top{
+            top: -20;
+        }
+        
+        .bg-image-bottom{
+            display: none;
+        }
+    }
+    
+    header{
+        grid-area: header;
+        margin-top: 40px;
+        margin-left: 5px;
+
+        h1{ 
+            text-align: left;
+        }
+        
+        p{
+            margin-top: 50px;
+            margin-left:60px;
+            text-align: left;
+        }
+    }
+
+    .ratings{
+        grid-area: ratings;
+        position: relative;
+        top: 110px;
+        right: 60px;
+        justify-items: center;
+        
+        .review{
+            padding: 5px 25px;
+            margin-left: 45px;
+            min-width: 50%;
+        }
+    }
+
+    .user {
+        grid-area: user;
+        display: flex;
+        top: 0px;
+    }
+}
+
+@media all and(min-width: 993px){
+
+    body{
+            grid-template-rows: 55% 45%;
+            row-gap: 10px;
+
+            header{
+                p{
+                    position: relative;
+                    left: 20px;
+                    top: -25px;
+                }
+            }
+
+            .ratings{
+                width: 100%;
+                position: relative;
+                top: 0;
+                right: 0;
+                left: 0;
+                right: 0;
+                margin-top: 60px;
+
+        
+                .review1{
+                    width: 80%;
+                    transform: translateX(-10%);
+                }
+        
+                .review2{
+                    transform: translateX(0%);
+                    width: 80%;
+                }
+        
+                .review3{
+                    transform: translateX(10%);
+                    width: 80%;
+                }
+            }
+        
+            .user{
+                display: flex;
+                flex-direction: row;
+                width: 80%;
+            }
+        }
+    
+}
